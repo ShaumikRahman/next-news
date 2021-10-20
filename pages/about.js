@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/About.module.css";
+import styles from "../styles/About.module.scss";
 import Link from "next/link";
 
 export const about = () => {

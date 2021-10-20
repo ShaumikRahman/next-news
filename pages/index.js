@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.scss";
 import breaking from "../img/breaking.jpg";
 
@@ -18,15 +19,29 @@ export default function Home({ articles, results, status }) {
         {status === "ok" &&
           articles.map((article, index) => {
             return (
-              <div className={styles.article} key={index}>
-                <h1 className="article__title">{article.title}</h1>
-                <div className={styles.small}>
-                {!!article.publishedAt && <p className={styles.date}>{article.publishedAt}</p>}
-                {!!article.author && <p className={styles.author}>{article.author}</p>}
-                </div>
-                {article.urlToImage ? <img src={article.urlToImage} alt="test" /> : <Image src={breaking} />}
-                {!!article.description && <h3 className="article__desc">{article.description}</h3>}
-              </div>
+              <Link href={`read/${index+1}`} key={index} >
+                <a className={styles.link}>
+                  <div className={styles.article} >
+                    <h1>{article.title}</h1>
+                    <div className={styles.small}>
+                      {!!article.publishedAt && (
+                        <p className={styles.date}>{article.publishedAt}</p>
+                      )}
+                      {!!article.author && (
+                        <p className={styles.author}>{article.author}</p>
+                      )}
+                    </div>
+                    {article.urlToImage ? (
+                      <img src={article.urlToImage} alt="test" />
+                    ) : (
+                      <Image src={breaking} />
+                    )}
+                    {!!article.description && (
+                      <h3 className="article__desc">{article.description}</h3>
+                    )}
+                  </div>
+                </a>
+              </Link>
             );
           })}
       </div>
@@ -34,7 +49,7 @@ export default function Home({ articles, results, status }) {
   );
 }
 
-export const getServerSideProps = async (pageContext) => {
+export const getStaticProps = async (pageContext) => {
   const response = await fetch(
     "https://newsapi.org/v2/top-headlines?country=gb",
     {
@@ -50,7 +65,8 @@ export const getServerSideProps = async (pageContext) => {
     props: {
       articles: data.articles,
       results: data.totalResults,
-      status: data.status
+      status: data.status,
     },
+    revalidate: 15
   };
 };

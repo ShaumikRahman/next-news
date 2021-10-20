@@ -1,0 +1,25 @@
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 50%;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
+}
+
+.title {
+    text-align: center;
+}
+
+.small {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    color: #0070f0;
+    text-align: center;
+}
