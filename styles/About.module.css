@@ -1,0 +1,22 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 600%;
+    color: #0070f0;
+    text-align: center;
+}
+
+.link {
+    color: #0070f0;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
