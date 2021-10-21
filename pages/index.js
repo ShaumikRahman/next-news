@@ -19,9 +19,9 @@ export default function Home({ articles, results, status }) {
         {status === "ok" &&
           articles.map((article, index) => {
             return (
-              <Link href={`read/${index+1}`} key={index} >
+              <Link href={`/read/${index+1}`} key={index} >
                 <a className={styles.link}>
-                  <div className={styles.article} >
+                  <div className={styles.article} id={index+1} >
                     <h1>{article.title}</h1>
                     <div className={styles.small}>
                       {!!article.publishedAt && (
