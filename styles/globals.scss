@@ -27,3 +27,38 @@ a {
   gap: 1rem;
   min-height: 100vh;
 }
+
+.jump {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  transform: scale(0);
+  background-color: #363955;
+  color: #fafafa;
+  border-radius: 50px;
+
+  transition: all 250ms ease-in-out;
+
+  @media (min-width: 48rem) {
+    right: 5%;
+    bottom: 10%;
+  }
+
+  &.visible {
+    transform: scale(2);
+    transition: all 250ms ease-in-out;
+
+    @media (min-width: 48rem) {
+      transform: scale(3);
+    }
+  }
+}
