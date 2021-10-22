@@ -73,6 +73,6 @@ export const getStaticProps = async (pageContext) => {
       results: data.totalResults,
       status: data.status,
     },
-    revalidate: 15,
+    revalidate: 900,
   };
 };

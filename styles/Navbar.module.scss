@@ -4,5 +4,13 @@
 
     div {
         margin: 1rem;
+        transition: color 150ms ease-in-out;
+        
+        a:hover {
+            color: #0070f0;
+            transition: color 150ms ease-in-out;
+        }
     }
+
+    
 }
