@@ -23,12 +23,12 @@ a {
 #main {
   
   background-color: #fafafa;
-  transition: background-color 150ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 
   &.dark {
     background-color: #162c35;
     color: #fafafa;
-    transition: all 150ms ease-in-out;
+    transition: all 200ms ease-in-out;
   }
 }
 
