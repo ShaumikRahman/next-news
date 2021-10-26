@@ -23,7 +23,8 @@ a {
 #main {
   
   background-color: #fafafa;
-  transition: background-color 200ms ease-in-out;
+  color: black;
+  transition: all 200ms ease-in-out;
 
   &.dark {
     background-color: #162c35;

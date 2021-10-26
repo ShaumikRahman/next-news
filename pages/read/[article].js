@@ -1,10 +1,10 @@
 import styles from "../../styles/Article.module.scss";
 import Image from "next/image";
+import breaking from "../../img/breaking.jpg";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const article = ({ article }) => {
-
   const Router = useRouter();
 
   return (
@@ -21,18 +21,16 @@ export const article = ({ article }) => {
           <span> {!!article.publishedAt && article.publishedAt}</span>
         </div>
         {article.urlToImage ? (
-          <img src={article.urlToImage} alt={article.title}/>
+          <img src={article.urlToImage} alt={article.title} />
         ) : (
           <Image src={breaking} />
         )}
         <div className={styles.textContainer}>
           <p className={styles.text}>{!!article.content && article.content}</p>
         </div>
-        <Link href={article.url}>
-          <a className={styles.link}>
-            <h3 className={styles.linkText}>Read on site</h3>
-          </a>
-        </Link>
+        <a href={article.url} className={styles.link} target="_blank">
+          <h3 className={styles.linkText}>Read on site</h3>
+        </a>
       </div>
     </div>
   );

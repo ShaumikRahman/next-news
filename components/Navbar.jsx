@@ -24,6 +24,12 @@ export const Navbar = () => {
                 <Link href="#">
                     <a onClick={() => {
                         document.getElementById('main').classList.toggle('dark');
+
+                        if (document.getElementById('main').classList.contains('dark')) {
+                            localStorage.setItem('dark', 'true');
+                        } else {
+                            localStorage.setItem('dark', 'false');
+                        }
                     }}>
                         Theme
                     </a>
