@@ -11,11 +11,6 @@ export const Navbar = () => {
                 </Link>
             </div>
             <div>
-                <Link href="/top">
-                    <a>Top</a>
-                </Link>
-            </div>
-            <div>
                 <Link href="/about">
                     <a>About</a>
                 </Link>
